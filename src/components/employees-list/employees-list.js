@@ -1,7 +1,7 @@
 import EmployeesListItem from '../employees-list-item/employees-list-item'
 import './employees-list.css'
 
-const EmployeesList = ({date, onDelete}) => {
+const EmployeesList = ({date, onDelete, onTogleRice, onTogleIncrease}) => {
 
     const element = date.map(item =>{
         const {id, ...propsItem} = item
@@ -9,7 +9,9 @@ const EmployeesList = ({date, onDelete}) => {
             <EmployeesListItem 
                 key={id} 
                 {...propsItem}
-                onDelete= {() => onDelete(id)}/>
+                onDelete= {() => onDelete(id)}
+                onTogleIncrease = { () => onTogleIncrease(id)}
+                onTogleRice = { () => onTogleRice(id)}/>
         )
     })
     return(
